@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Course Manager</title>
+
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="homepage.style.client.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+<!--nav-bar-->
+<nav class="navbar bg-primary">
+  <div class="col-md-3">
+    <a href="#">
+      <i class="fas fa-bars" style="color:white"></i>
+    </a>
+    <label></label>
+    <label></label>
+    <label class="col-form-table  text-white h2">
+      Course Manager
+    </label>
+  </div>
+
+  <div class="col-md-6">
+    <input class=" homepage-input font-italic font-weight-bold text-white"
+           type="text" size="60" placeholder="New Course Title"
+    />
+    <!--      <input class="form-control font-italic font-weight-bold" type="text"-->
+    <!--             placeholder="New Course Title">-->
+    <!--      <input class="form-control transparent-input"-->
+    <!--             type='text' name='name'-->
+    <!--             placeholder="Field title..."  required>-->
+  </div>
+  <div class="col-md-3">
+    <i class="fas fa-plus-circle fa-3x col-md-auto" style="color:red"></i>
+  </div>
+</nav>
+
+<nav class="navbar navbar-expand-lg bg-light sticky-top" style="padding: 0; margin: 0">
+  <div class="container-fluid">
+    <div class="col mx-auto">
+      <table class="table table-hover" style="padding: 0; margin: 0">
+        <thead>
+        <tr>
+          <th style="width:15%"></th>
+          <th scope="col-4"
+              class="font-weight-bold" style="color: #808080; width:25%; font-size:15px">
+            Title
+          </th>
+          <th scope="col-2"
+              class="font-weight-bold" style="color: #808080; width:20%; font-size:15px">
+            Owned By
+          </th>
+          <th scope="col-2"
+              class="text-center" style="color: #808080; width:15%;">
+            Last modified by me
+          </th>
+          <th scope="col-1">
+            <a href="#">
+              <i class="fas fa-grip-horizontal fa-2x" style="color:#808080"></i>
+            </a>
+
+            <label></label>
+            <label></label>
+            <label></label>
+            <label></label>
+            <label></label>
+            <a href="#">
+              <i class="fas fa-sort-alpha-down fa-2x " style="color:#808080"></i>
+            </a>
+          </th>
+        </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid" style="padding: 0; margin:0">
+  <div class="col-11 mx-auto">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <tbody>
+        <tr>
+          <th scope="col-4" class="text-right" style="width:15%">
+            <i class="fas fa-file-alt col-md-auto text-primary"></i>
+          </th>
+          <td scope="col-2" style="width: 25%">
+            <a href="../course-editor/course-editor.template.client.html"
+               class="text-secondary font-weight-bold">
+              CS5610 Web Development
+            </a>
+          </td>
+          <td scope="col-2" style="width: 25%" class="text-secondary font-weight-bold">
+            me
+          </td>
+          <td scope="col-2" style="width: 25%" class="text-secondary font-weight-bold">
+            6:45 PM
+          </td>
+          <td scope="col-1" >
+            <i class="fas fa-trash-alt col-md-auto text-secondary"></i>
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="col-4" class="text-right" style="width:15%">
+            <i class="fas fa-file-alt col-md-auto text-primary"></i>
+          </th>
+          <td scope="col-2" style="width: 25%">
+            <a href="../course-editor/course-editor.template.client.html"
+               class="text-secondary font-weight-bold">
+              CS5200 Database Management
+            </a>
+          </td>
+          <td scope="col-2" style="width: 25%" class="text-secondary font-weight-bold">
+            me
+          </td>
+          <td scope="col-2" style="width: 25%" class="text-secondary font-weight-bold">
+            6:45 PM
+          </td>
+          <td scope="col-1" >
+            <i class="fas fa-trash-alt col-md-auto text-secondary"></i>
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="col-4" class="text-right" style="width:15%">
+            <i class="fas fa-file-alt col-md-auto text-primary"></i>
+          </th>
+          <td scope="col-2" style="width: 25%">
+            <a href="../course-editor/course-editor.template.client.html"
+               class="text-secondary font-weight-bold">
+              CS5500 Foundation of Software Engineering
+            </a>
+          </td>
+          <td scope="col-2" style="width: 25%" class="text-secondary font-weight-bold">
+            me
+          </td>
+          <td scope="col-2" style="width: 25%" class="text-secondary font-weight-bold">
+            6:45 PM
+          </td>
+          <td scope="col-1" >
+            <i class="fas fa-trash-alt col-md-auto text-secondary"></i>
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="col-4" class="text-right" style="width:15%">
+            <i class="fas fa-file-alt col-md-auto text-primary"></i>
+          </th>
+          <td scope="col-2" style="width: 25%">
+            <a href="../course-editor/course-editor.template.client.html"
+               class="text-secondary font-weight-bold">
+              CS5800 Algorithm
+            </a>
+          </td>
+          <td scope="col-2" style="width: 25%" class="text-secondary font-weight-bold">
+            me
+          </td>
+          <td scope="col-2" style="width: 25%" class="text-secondary font-weight-bold">
+            6:45 PM
+          </td>
+          <td scope="col-1" >
+            <i class="fas fa-trash-alt col-md-auto text-secondary"></i>
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="col-4" class="text-right" style="width:15%">
+            <i class="fas fa-file-alt col-md-auto text-primary"></i>
+          </th>
+          <td scope="col-2" style="width: 25%">
+            <a href="../course-editor/course-editor.template.client.html"
+               class="text-secondary font-weight-bold">
+              CS6510 Distributed System
+            </a>
+          </td>
+          <td scope="col-2" style="width: 25%" class="text-secondary font-weight-bold">
+            me
+          </td>
+          <td scope="col-2" style="width: 25%" class="text-secondary font-weight-bold">
+            6:45 PM
+          </td>
+          <td scope="col-1" >
+            <i class="fas fa-trash-alt col-md-auto text-secondary"></i>
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="col-4" class="text-right" style="width:15%">
+            <i class="fas fa-file-alt col-md-auto text-primary"></i>
+          </th>
+          <td scope="col-2" style="width: 25%">
+            <a href="../course-editor/course-editor.template.client.html"
+               class="text-secondary font-weight-bold">
+              CS5001 Python
+            </a>
+          </td>
+          <td scope="col-2" style="width: 25%" class="text-secondary font-weight-bold">
+            me
+          </td>
+          <td scope="col-2" style="width: 25%" class="text-secondary font-weight-bold">
+            6:45 PM
+          </td>
+          <td scope="col-1" >
+            <i class="fas fa-trash-alt col-md-auto text-secondary"></i>
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="col-4" class="text-right" style="width:15%">
+            <i class="fas fa-file-alt col-md-auto text-primary"></i>
+          </th>
+          <td scope="col-2" style="width: 25%">
+            <a href="../course-editor/course-editor.template.client.html"
+               class="text-secondary font-weight-bold">
+              CS5002 Discrete Mathematics
+            </a>
+          </td>
+          <td scope="col-2" style="width: 25%" class="text-secondary font-weight-bold">
+            me
+          </td>
+          <td scope="col-2" style="width: 25%" class="text-secondary font-weight-bold">
+            6:45 PM
+          </td>
+          <td scope="col-1" >
+            <i class="fas fa-trash-alt col-md-auto text-secondary"></i>
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="col-4" class="text-right" style="width:15%">
+            <i class="fas fa-file-alt col-md-auto text-primary"></i>
+          </th>
+          <td scope="col-2" style="width: 25%">
+            <a href="../course-editor/course-editor.template.client.html"
+               class="text-secondary font-weight-bold">
+              CS4550 Software Engineering Undergraduate
+            </a>
+          </td>
+          <td scope="col-2" style="width: 25%" class="text-secondary font-weight-bold">
+            me
+          </td>
+          <td scope="col-2" style="width: 25%" class="text-secondary font-weight-bold">
+            6:45 PM
+          </td>
+          <td scope="col-1" >
+            <i class="fas fa-trash-alt col-md-auto text-secondary"></i>
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <div class="fixed-bottom col" style="text-align:right">
+      <a href="#">
+        <i class="fas fa-plus-circle fa-4x col-md-auto" style="color:red"></i>
+      </a>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

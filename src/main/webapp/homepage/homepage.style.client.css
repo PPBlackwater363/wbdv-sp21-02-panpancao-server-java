@@ -1,0 +1,9 @@
+.homepage-input {
+  background: rgba(255,255,255,0.4);
+  border: none;
+  display: block;
+  outline: none;
+  margin: 0 auto;
+  padding: 15px;
+  color: #333;
+}
