@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Course Editor</title>
+
+
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <link href="course-editor.style.client.css" rel="stylesheet"/>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+<!--  nav bar-->
+<div>
+  <nav class="navbar navbar-dark bg-secondary">
+
+    <a href="../homepage/homepage.template.client.html">
+      <i class="fas fa-times fa-2x col-md-auto" style="color:white"></i>
+    </a>
+
+    <label class="col-form-label col-md-3 text-white h2 wbdv-course-title" style="font-size: 25px">
+      CS5610-WedDev
+    </label>
+
+    <ul class="nav nav-pills nav-fill col-md-8 wbdv-page-tab">
+      <li class="nav-item">
+        <a class="nav-link bg-secondary text-white-50 font-weight-hold wbdv-page-tab"
+           href="#" style="font-size: 25px">Build</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link bg-secondary text-white-50 font-weight-hold wbdv-page-tab"
+           href="#" style="font-size: 25px">Pages</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link bg-secondary text-white-50 font-weight-hold wbdv-page-tab"
+           href="#" style="font-size: 25px">Themes</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link bg-secondary text-white-50 font-weight-hold wbdv-page-tab"
+           href="#" style="font-size: 25px">Store</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link bg-secondary text-white-50 font-weight-hold wbdv-page-tab"
+           href="#" style="font-size: 25px">Apps</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link bg-secondary text-white-50 font-weight-hold wbdv-page-tab"
+           href="#" style="font-size: 25px">Settings</a>
+      </li>
+    </ul>
+    <i class="fas fa-plus fa-2x col-md-auto" style="color:white"></i>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-3 d-none d-md-block bg-dark sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column wbdv-module-list">
+            <div class="container">
+              <li class="nav-item wbdv-module-list">
+                <button type="button" class="btn btn-secondary btn-lg col-md-12">
+                  <div>
+                    <div class="row">
+                      <i class="offset-1 col col-8 align-middle wbdv-module-item-title">
+                        Module 1 - JQuery
+                      </i>
+                      <i class="fas fa-trash-alt col-md-auto" style="color:white"></i>
+                    </div>
+                  </div>
+                </button>
+              </li>
+              <label class="row"></label>
+              <label class="row"></label>
+
+              <li class="nav-item wbdv-module-list">
+                <button type="button" class="btn btn-secondary btn-lg col-md-12">
+                  <div class="row">
+                    <i class="offset-1 col col-8 align-middle wbdv-module-item-title">
+                      Module 2 - React
+                    </i>
+                    <i class="fas fa-trash-alt col-md-auto" style="color:white"></i>
+                  </div>
+                </button>
+              </li>
+              <label class="row"></label>
+              <label class="row"></label>
+
+              <li class="nav-item wbdv-module-list">
+                <button type="button" class="btn btn-secondary btn-lg col-md-12">
+                  <div class="row">
+                    <i class="offset-1 col col-8 align-middle wbdv-module-item-title">
+                      Module 3 - Redux
+                    </i>
+                    <i class="fas fa-trash-alt col-md-auto" style="color:white"></i>
+                  </div>
+                </button>
+              </li>
+              <label class="row"></label>
+              <label class="row"></label>
+
+              <li class="nav-item wbdv-module-list">
+                <button type="button" class="btn btn-secondary btn-lg col-md-12">
+                  <div class="row">
+                    <i class="offset-1 col col-8 align-middle wbdv-module-item-title">
+                      Module 4 - Native
+                    </i>
+                    <i class="fas fa-trash-alt col-md-auto" style="color:white"></i>
+                  </div>
+                </button>
+              </li>
+              <label class="row"></label>
+              <label class="row"></label>
+
+              <li class="nav-item wbdv-module-list">
+                <button type="button" class="btn btn-secondary btn-lg col-md-12">
+                  <div class="row">
+                    <i class="offset-1 col col-8 align-middle wbdv-module-item-title">
+                      Module 5 - Angular
+                    </i>
+                    <i class="fas fa-trash-alt col-md-auto" style="color:white"></i>
+                  </div>
+                </button>
+              </li>
+              <label class="row"></label>
+              <label class="row"></label>
+
+              <li class="nav-item wbdv-module-list">
+                <button type="button" class="btn btn-secondary btn-lg col-md-12">
+                  <div class="row">
+                    <i class="offset-1 col col-8 align-middle wbdv-module-item-title">
+                      Module 6 - Node
+                    </i>
+                    <i class="fas fa-trash-alt col-md-auto" style="color:white"></i>
+                  </div>
+                </button>
+              </li>
+              <label class="row"></label>
+              <label class="row"></label>
+
+              <li class="nav-item wbdv-module-list">
+                <button type="button" class="btn btn-secondary btn-lg col-md-12">
+                  <div class="row">
+                    <i class="offset-1 col col-8 align-middle wbdv-module-item-title">
+                      Module 7 - Mongo
+                    </i>
+                    <i class="fas fa-trash-alt col-md-auto" style="color:white"></i>
+                  </div>
+                </button>
+              </li>
+
+              <label class="row"></label>
+              <label class="row"></label>
+              <i class="fas fa-plus offset-10 fa-2x col-md-auto" style="color:white"></i>
+
+              <label class="row"></label>
+              <label class="row"></label>
+
+              <label class="row"></label>
+              <label class="row"></label>
+
+              <label class="row"></label>
+              <label class="row"></label>
+
+              <label class="row"></label>
+              <label class="row"></label>
+
+              <label class="row"></label>
+              <label class="row"></label>
+
+              <label class="row"></label>
+              <label class="row"></label>
+
+              <label class="row"></label>
+              <label class="row"></label>
+
+              <label class="row"></label>
+              <label class="row"></label>
+
+              <label class="row"></label>
+              <label class="row"></label>
+              <label class="row"></label>
+
+              <label class="row"></label>
+              <label class="row"></label>
+
+            </div>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="row col-md-9">
+        <div class="container-fluid wbdv-topic-pill-list">
+          <div class="row">
+            <div class="col">
+              <label class="row"></label>
+              <button type="button" class="btn btn-secondary wbdv-topic-pill">Topic 1</button>
+              <i class="col col-md-1"></i>
+              <button type="button" class="btn btn-secondary wbdv-topic-pill">Topic 2</button>
+              <i class="col col-md-1"></i>
+              <button type="button" class="btn btn-secondary wbdv-topic-pill">Topic 3</button>
+              <i class="col col-md-1"></i>
+              <button type="button" class="btn btn-secondary wbdv-topic-pill">Topic 4</button>
+              <i class="col col-md-1"></i>
+              <i class="fas fa-plus-square fa-3x align-middle" style="color:#767676"></i>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h1>content intentionally leave blank</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
