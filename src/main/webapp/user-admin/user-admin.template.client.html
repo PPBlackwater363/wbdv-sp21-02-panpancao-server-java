@@ -8,10 +8,8 @@
       "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   <link href="user-admin.style.client.css" rel="stylesheet" />
-  <script
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="admin-user.service.client.js"></script>
-  <script src="admin-user.controller.client.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="user-admin.service.client.js"></script>
 
 
 </head>
@@ -34,18 +32,22 @@
         <tr class="wbdv-form">
           <td>
             <input id="usernameFld" class="form-control"
+                   type="text"
                      placeholder="Username" />
           </td>
           <td>
             <input id="passwordFld" class="form-control"
+                   type="password"
                      placeholder="Password" />
           </td>
           <td>
             <input id="firstNameFld" class="form-control"
+                   type="text"
                      placeholder="First Name" />
           </td>
           <td>
             <input id="lastNameFld" class="form-control"
+                   type="text"
                      placeholder="Last Name" />
           </td>
           <td>
@@ -58,30 +60,31 @@
           <td>
             <span class="pull-right" style="white-space: nowrap">
               <i class="fas fa-search fa-2x wbdv-search"></i>
-              <i class="fa-2x fa fa-plus wbdv-create"></i>
+              <i class="fa-2x fa fa-plus wbdv-create" id="wbdv-createUser"></i>
               <i class="fa-2x fa fa-check wbdv-update"></i>
             </span>
           </td>
         </tr>
       </thead>
+
       <tbody class="wbdv-tbody">
-      <tr class="wbdv-template wbdv-user wbdv-hidden">
-        <td class="wbdv-username">ada</td>
-        <td>&nbsp;</td>
-        <td class="wbdv-first-name">Ada</td>
-        <td class="wbdv-last-name">Lovelace</td>
-        <td class="wbdv-role">FACULTY</td>
-        <td class="wbdv-actions">
-        <span class="pull-right">
-          <i class="fa-2x fa fa-times wbdv-remove"></i>
-          <i class="fa-2x fa fa-pencil wbdv-edit"></i>
-        </span>
-        </td>
-      </tr>
+        <tr class="wbdv-template wbdv-user wbdv-hidden">
+          <td class="wbdv-username">ada</td>
+          <td>&nbsp;</td>
+          <td class="wbdv-first-name">Ada</td>
+          <td class="wbdv-last-name">Lovelace</td>
+          <td class="wbdv-role">FACULTY</td>
+          <td class="wbdv-actions">
+          <span class="pull-right">
+            <i class="fa-2x fa fa-times wbdv-remove" ></i>
+            <i class="fa-2x fa fa-pencil wbdv-edit"></i>
+          </span>
+          </td>
+        </tr>
       </tbody>
 
     </table>
   </div>
-
+  <script src="user-admin.controller.client.js"></script>
 </body>
 </html>
