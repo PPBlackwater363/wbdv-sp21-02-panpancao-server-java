@@ -41,11 +41,9 @@ var $lastNameFld
 var $roleFld
 var $createBtn
 var theTableBody
+var userService = new AdminUserServiceClient()
 
-var users = [
-  // {username: 'lala', password: 'kaka', firstname: "jun", lastname: "okawa", role: "Admin"},
-  // {username: 'la', password: 'aka', firstname: "jn", lastname: "okaa", role: "Admin"}
-];
+var users = [];
 
 console.log(users)
 
@@ -137,6 +135,8 @@ function main() {
     $firstNameFld.val("")
     $lastNameFld.val("")
   })
+
+  userService.findAllUsers()
 
 }
 
