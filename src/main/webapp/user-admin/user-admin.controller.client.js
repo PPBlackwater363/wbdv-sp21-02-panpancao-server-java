@@ -20,28 +20,36 @@
 // alert("Welcome to Js!!!")
 // console.log("haha")
 
-var createUserBtn = jQuery("#wbdv-createUser")
+// var createUserBtn = jQuery("#wbdv-createUser")
 
-function addUser() {
-  alert("create new user")
-  createUser({
-    username: 'ka',
-    password: 'ka',
-    firstname: "ln",
-    lastname: "okaa",
-    role: "Admin"})
-}
+// function addUser() {
+//   alert("create new user")
+//   createUser({
+//     username: 'ka',
+//     password: 'ka',
+//     firstname: "ln",
+//     lastname: "okaa",
+//     role: "Admin"})
+// }
+//
+// createUserBtn.click(addUser)
 
-createUserBtn.click(addUser)
+var $usernameFld
+var $passwordFld
+var $firstNameFld
+var $lastNameFld
+var $roleFld
+var $createBtn
+var theTableBody
 
 var users = [
-  {username: 'lala', password: 'kaka', firstname: "jun", lastname: "okawa", role: "Admin"},
-  {username: 'la', password: 'aka', firstname: "jn", lastname: "okaa", role: "Admin"}
+  // {username: 'lala', password: 'kaka', firstname: "jun", lastname: "okawa", role: "Admin"},
+  // {username: 'la', password: 'aka', firstname: "jn", lastname: "okaa", role: "Admin"}
 ];
 
 console.log(users)
 
-var theHeading = jQuery("h1")
+// var theHeading = jQuery("h1")
 // theHeading
 //   .html("User Admin Editor")
 //   .css("background-color", "blue")
@@ -52,16 +60,16 @@ var theHeading = jQuery("h1")
 // console.log(theHeading)
 
 
-var theTableBody = jQuery("tbody")
+
 
 function createUser(user) {
   users.push(user)
   renderUsers(users)
 }
 
-createUser({username: 'ka', password: 'ka', firstname: "ln", lastname: "okaa", role: "Admin"})
-createUser({username: 'a', password: 'ka', firstname: "ln", lastname: "okaa", role: "Admin"})
-createUser({username: 'k', password: 'da', firstname: "lu", lastname: "kaa", role: "Admin"})
+// createUser({username: 'ka', password: 'ka', firstname: "ln", lastname: "okaa", role: "Admin"})
+// createUser({username: 'a', password: 'ka', firstname: "ln", lastname: "okaa", role: "Admin"})
+// createUser({username: 'k', password: 'da', firstname: "lu", lastname: "kaa", role: "Admin"})
 
 
 
@@ -85,16 +93,16 @@ function renderUsers(users) {
             </tr>')`)
   }
 
-  $(".wbdv-remove").click(function(event) {
+  function removeUser(event) {
     alert("remove this user")
     var button = $(event.target)
     var id = button.attr("id")
     console.log(id)
-
     users.splice(id, 1)
-
     renderUsers(users)
-  })
+  }
+
+  $(".wbdv-remove").click(removeUser)
 
   // jQuery(".wbdv-remove").click(function(event){
   //   console.log(event.target)
@@ -102,9 +110,37 @@ function renderUsers(users) {
   // })
 }
 
-renderUsers(users)
+// renderUsers(users)
 
+function main() {
+  $usernameFld = $(".wbdv-username-fld")
+  $passwordFld = $(".wbdv-password-fld")
+  $firstNameFld = $(".wbdv-firstName-fld")
+  $lastNameFld = $(".wbdv-lastName-fld")
+  $roleFld = $(".wbdv-role-fld")
 
+  $createBtn = $(".wbdv-create")
+  theTableBody = jQuery("tbody")
+
+  $createBtn.click(function () {
+    alert("Create a new user!")
+    var newUser = {
+      username: $usernameFld.val(),
+      password: $passwordFld.val(),
+      firstname: $firstNameFld.val(),
+      lastname: $lastNameFld.val(),
+      role: $roleFld.val()
+    }
+    createUser(newUser)
+    $usernameFld.val("")
+    $passwordFld.val("")
+    $firstNameFld.val("")
+    $lastNameFld.val("")
+  })
+
+}
+
+jQuery(main)
 
 
 
