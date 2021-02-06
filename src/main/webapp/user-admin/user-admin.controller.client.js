@@ -17,59 +17,69 @@
 //   // function findUserById() { … } // optional - might not need this
 // })();
 
-// alert("Welcome to Js!!!")
-// console.log("haha")
-
-// var createUserBtn = jQuery("#wbdv-createUser")
-
-// function addUser() {
-//   alert("create new user")
-//   createUser({
-//     username: 'ka',
-//     password: 'ka',
-//     firstname: "ln",
-//     lastname: "okaa",
-//     role: "Admin"})
-// }
-//
-// createUserBtn.click(addUser)
-
 var $usernameFld
 var $passwordFld
 var $firstNameFld
 var $lastNameFld
 var $roleFld
 var $createBtn
+var $updateBtn
 var theTableBody
 var userService = new AdminUserServiceClient()
-
 var users = [];
-
-console.log(users)
-
-// var theHeading = jQuery("h1")
-// theHeading
-//   .html("User Admin Editor")
-//   .css("background-color", "blue")
-//   .css("color", "yellow")
-//   .append("!")
-//   .append("remove")
-//   .append("<button>GO</button>")
-// console.log(theHeading)
-
-
 
 
 function createUser(user) {
-  users.push(user)
-  renderUsers(users)
+  userService.createUser(user)
+      .then(function(actualUser) {
+        users.push(actualUser)
+        renderUsers(users)
+      })
 }
 
-// createUser({username: 'ka', password: 'ka', firstname: "ln", lastname: "okaa", role: "Admin"})
-// createUser({username: 'a', password: 'ka', firstname: "ln", lastname: "okaa", role: "Admin"})
-// createUser({username: 'k', password: 'da', firstname: "lu", lastname: "kaa", role: "Admin"})
+var selectedUser
+function selectUser(event) {
+  var selectBtn = jQuery(event.target)
+  var theId = selectBtn.attr("id")
+  selectedUser = users.find(user => user._id === theId)
+  $usernameFld.val(selectedUser.username)
+  $passwordFld.val(selectedUser.password)
+  $firstNameFld.val(selectedUser.firstname)
+  $lastNameFld.val(selectedUser.lastname)
+  $roleFld.val(selectedUser.role)
+}
 
+function updateUser() {
+  selectedUser.username = $usernameFld.val()
+  selectedUser.password = $passwordFld.val()
+  selectedUser.firstname = $firstNameFld.val()
+  selectedUser.lasttname = $lastNameFld.val()
+  selectedUser.role = $roleFld.val()
 
+  userService.updateUser(selectedUser._id, selectedUser)
+      .then(status => {
+        var index = users.findIndex(user => user._id === selectedUser._id)
+        users[index] = selectedUser
+        renderUsers(users)
+      })
+
+  $usernameFld.val("")
+  $passwordFld.val("")
+  $firstNameFld.val("")
+  $lastNameFld.val("")
+}
+
+function deleteUser(event) {
+  alert("remove this user")
+  var button = $(event.target)
+  var index = button.attr("id")
+  var id = users[index]._id
+  userService.deleteUser(id)
+      .then(function (status) {
+        users.splice(index, 1)
+        renderUsers(users)
+      })
+}
 
 function renderUsers(users) {
   theTableBody.empty()
@@ -85,30 +95,16 @@ function renderUsers(users) {
               <td class="wbdv-actions">
               <span class="pull-right">
                 <i class="fa-2x fa fa-times wbdv-remove" id="${i}"></i>
-                <i class="fa-2x fa fa-pencil wbdv-edit"></i>
+                <i class="fa-2x fa fa-pencil wbdv-select" id="${user._id}"></i>
               </span>
               </td>
             </tr>')`)
   }
 
-  function removeUser(event) {
-    alert("remove this user")
-    var button = $(event.target)
-    var id = button.attr("id")
-    console.log(id)
-    users.splice(id, 1)
-    renderUsers(users)
-  }
-
-  $(".wbdv-remove").click(removeUser)
-
-  // jQuery(".wbdv-remove").click(function(event){
-  //   console.log(event.target)
-  //
-  // })
+  $(".wbdv-remove").click(deleteUser)
+  jQuery(".wbdv-select").click(selectUser)
 }
 
-// renderUsers(users)
 
 function main() {
   $usernameFld = $(".wbdv-username-fld")
@@ -118,6 +114,8 @@ function main() {
   $roleFld = $(".wbdv-role-fld")
 
   $createBtn = $(".wbdv-create")
+  $updateBtn = $(".wbdv-update")
+
   theTableBody = jQuery("tbody")
 
   $createBtn.click(function () {
@@ -136,7 +134,13 @@ function main() {
     $lastNameFld.val("")
   })
 
+  $updateBtn.click(updateUser)
+
   userService.findAllUsers()
+      .then(function (actualUsersFromServer) {
+        users = actualUsersFromServer
+        renderUsers(users)
+      })
 
 }
 
