@@ -94,7 +94,7 @@ function renderUsers(users) {
   theTableBody.empty()
   for (var i = 0; i < users.length; i++) {
     var user = users[i]
-    theTableBody.prepend(`theTableBody
+    theTableBody.append(`theTableBody
 .append('<tr class="wbdv-template wbdv-user wbdv-hidden">
               <td class="wbdv-username">${user.username}</td>
               <td>******</td>
