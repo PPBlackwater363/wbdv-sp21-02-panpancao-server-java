@@ -97,14 +97,14 @@ function renderUsers(users) {
     theTableBody.prepend(`theTableBody
 .append('<tr class="wbdv-template wbdv-user wbdv-hidden">
               <td class="wbdv-username">${user.username}</td>
-              <td>***************</td>
+              <td>******</td>
               <td class="wbdv-first-name">${user.firstname}</td>
               <td class="wbdv-last-name">${user.lastname}</td>
               <td class="wbdv-role">${user.role}</td>
               <td class="wbdv-actions">
               <span class="pull-right">
-                <i class="fa-2x fa fa-times wbdv-remove" id="${i}"></i>
-                <i class="fa-2x fa fa-pencil wbdv-select" id="${user._id}"></i>
+                <i class="fa-2x fa fa-pencil wbdv-select float-right" id="${user._id}"></i>
+                <i class="fa-2x fa fa-times wbdv-remove float-right" id="${i}"></i>
               </span>
               </td>
             </tr>')`)
