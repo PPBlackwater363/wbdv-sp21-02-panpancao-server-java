@@ -30,10 +30,10 @@ function AdminUserServiceClient() {
     function updateUser(userId, user) {
         return fetch(`${self.url}/${userId}`, {
             method: 'PUT',
-            body: JSON.stringify(user),
             headers: {
                 'content-type': 'application/json'
-            }
+            },
+            body: JSON.stringify(user)
         }).then(response => response.json())
     }
 

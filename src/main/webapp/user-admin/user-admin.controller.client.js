@@ -1,4 +1,3 @@
-
 // (function () {
 //   var $usernameFld, $passwordFld;
 //   var $firstNameFld, $lastNameFld, $roleFld;
@@ -24,10 +23,10 @@ var $lastNameFld
 var $roleFld
 var $createBtn
 var $updateBtn
+var $searchBtn
 var theTableBody
 var userService = new AdminUserServiceClient()
-var users = [];
-
+var users = []
 
 function createUser(user) {
   userService.createUser(user)
@@ -53,16 +52,14 @@ function updateUser() {
   selectedUser.username = $usernameFld.val()
   selectedUser.password = $passwordFld.val()
   selectedUser.firstname = $firstNameFld.val()
-  selectedUser.lasttname = $lastNameFld.val()
+  selectedUser.lastname = $lastNameFld.val()
   selectedUser.role = $roleFld.val()
-
   userService.updateUser(selectedUser._id, selectedUser)
       .then(status => {
         var index = users.findIndex(user => user._id === selectedUser._id)
         users[index] = selectedUser
         renderUsers(users)
       })
-
   $usernameFld.val("")
   $passwordFld.val("")
   $firstNameFld.val("")
@@ -81,6 +78,18 @@ function deleteUser(event) {
       })
 }
 
+function searchUser() {
+  var username = $usernameFld.val()
+  var firstname = $firstNameFld.val()
+  var lastname = $lastNameFld.val()
+  var role = $roleFld.val()
+
+  var searchUsers = users.filter(user => user.username === username || user.firstname === firstname
+      || user.lastname === lastname || user.role === role
+  )
+  renderUsers(searchUsers)
+}
+
 function renderUsers(users) {
   theTableBody.empty()
   for (var i = 0; i < users.length; i++) {
@@ -88,7 +97,7 @@ function renderUsers(users) {
     theTableBody.prepend(`theTableBody
 .append('<tr class="wbdv-template wbdv-user wbdv-hidden">
               <td class="wbdv-username">${user.username}</td>
-              <td>&nbsp;</td>
+              <td>***************</td>
               <td class="wbdv-first-name">${user.firstname}</td>
               <td class="wbdv-last-name">${user.lastname}</td>
               <td class="wbdv-role">${user.role}</td>
@@ -112,12 +121,10 @@ function main() {
   $firstNameFld = $(".wbdv-firstName-fld")
   $lastNameFld = $(".wbdv-lastName-fld")
   $roleFld = $(".wbdv-role-fld")
-
   $createBtn = $(".wbdv-create")
   $updateBtn = $(".wbdv-update")
-
+  $searchBtn = $(".wbdv-search")
   theTableBody = jQuery("tbody")
-
   $createBtn.click(function () {
     alert("Create a new user!")
     var newUser = {
@@ -133,14 +140,15 @@ function main() {
     $firstNameFld.val("")
     $lastNameFld.val("")
   })
-
   $updateBtn.click(updateUser)
-
   userService.findAllUsers()
       .then(function (actualUsersFromServer) {
         users = actualUsersFromServer
         renderUsers(users)
       })
+
+  $searchBtn.click(searchUser)
+
 
 }
 
