@@ -1,11 +1,24 @@
 package com.example.wbdvsp2102panpancaoserverjava.models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="widgets")
 public class Widget {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String topicId;
     private String type;
     private Integer size;
     private String text;
+    private Integer width;
+    private Integer height;
+    private String src;
+    private Boolean ordered;
+
 
     public Widget() {
     }
@@ -56,5 +69,37 @@ public class Widget {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public Boolean getOrdered() {
+        return ordered;
+    }
+
+    public void setOrdered(Boolean ordered) {
+        this.ordered = ordered;
+    }
+
+    public Integer getWidth() {
+        return width;
+    }
+
+    public void setWidth(Integer width) {
+        this.width = width;
+    }
+
+    public Integer getHeight() {
+        return height;
+    }
+
+    public void setHeight(Integer height) {
+        this.height = height;
+    }
+
+    public String getSrc() {
+        return src;
+    }
+
+    public void setSrc(String src) {
+        this.src = src;
     }
 }
